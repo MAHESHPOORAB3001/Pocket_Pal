@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Track your expenses easily with Pocket Pal - A simple expense tracker app."
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pocket Pal</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Pocket Pal</h1>
+    </header>
+
+    <main>
+      <section class="balance" id="balance">
+        <center>
+          <h1>
+            <span class="material-icons">wallet</span>
+            Balance Remaining:
+          </h1>
+          <h1 id="balance-remaining">-</h1>
+          <p id="spending-rate">-</p>
+          <p id="monthly-budget">-</p>
+        </center>
+      </section>
+      <section class="add-transaction">
+        <h2>
+          <span class="material-icons">add</span>
+          Add Transaction
+        </h2>
+        <form id="transaction-form">
+          <label for="type"> Type </label>
+          <select id="type" required>
+            <option value="Income">Income</option>
+            <option value="Expense">Expense</option>
+            <option value="Budget">Monthly Budget</option>
+          </select>
+
+          <label for="title"> Title </label>
+          <input type="text" id="title" required placeholder="Title" />
+
+          <label for="amount"> Amount </label>
+          <input type="number" id="amount" required placeholder="Amount" />
+
+          <label for="tag"> Tag </label>
+          <input type="text" id="tag" required placeholder="Tag" />
+
+          <label for="date"> Date </label>
+          <input type="date" id="date" required />
+
+          <button type="submit" id="add-transaction-button">
+            <span class="material-icons">add</span>
+            Add Transaction
+          </button>
+        </form>
+      </section>
+
+      <section class="summary">
+        <h2>
+          <span class="material-icons">description</span>
+          Summary
+        </h2>
+        <form id="summary-form">
+          <label for="summary-date"> Date (MM-YYYY): </label>
+          <input type="month" id="summary-date" required />
+
+          <button type="submit" id="get-summary-button">
+            <span class="material-icons">list</span>
+            Get Summary
+          </button>
+        </form>
+
+        <h2 id="summary-result-heading">
+          <span class="material-icons">history</span>
+          Transaction History
+        </h2>
+        <ul id="summary-content" class="transaction-list"></ul>
+      </section>
+    </main>
+    <script src="./static/script.js"></script>
+  </body>
+</html>
